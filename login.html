@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Your Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900 flex items-center justify-center min-h-screen">
+
+  <div class="max-w-md w-full bg-white p-8 rounded-lg shadow-lg">
+    <h2 class="text-2xl font-semibold mb-6 text-center">Login</h2>
+    
+    <form id="loginForm">
+      <div class="mb-4">
+        <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+        <input type="text" id="username" name="username" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required />
+      </div>
+      <div class="mb-6">
+        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+        <input type="password" id="password" name="password" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" required />
+      </div>
+      <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded-md">Login</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Replace with your own credentials
+      const validUsername = "Monisha";
+      const validPassword = "12345";
+
+      if (username === validUsername && password === validPassword) {
+        localStorage.setItem('loggedIn', 'true');
+        window.location.href = 'index.html'; // Redirect to portfolio
+      } else {
+        alert("Invalid credentials!");
+      }
+    });
+  </script>
+
+</body>
+</html>
